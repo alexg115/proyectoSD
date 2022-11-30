@@ -6,7 +6,10 @@ const app = express();
 app.set('port',process.env.PORT || 4000);
 
 //middleware
-app.use(cors());
+app.use(cors({
+    origin: '*',
+    optionsSuccessStatus: 200
+}));
 app.use(express.json());
 
 //routes
